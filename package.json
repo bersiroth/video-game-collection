@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "nodemon --exec babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "npx eslint *.js"
+    "eslint": "eslint *.js",
+    "eslint:fix": "eslint --fix *.js",
+    "prettier": "prettier --write *.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "prettier": "^1.17.1"
   }
 }
