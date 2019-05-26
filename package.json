@@ -2,9 +2,9 @@
   "name": "tp-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start-dev": "nodemon --exec babel-node index.js",
+    "start-dev": "nodemon --exec babel-node app.js",
     "eslint": "eslint *.js",
     "eslint:fix": "eslint --fix *.js",
     "prettier": "prettier --write *.js"
