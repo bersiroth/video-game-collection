@@ -4,7 +4,8 @@ import { getUser, postUser } from '../controllers/users';
 
 const router = express.Router();
 
-router.route('/user')
+router
+  .route('/user')
   .get(getUser)
   .post(postUser);
 
