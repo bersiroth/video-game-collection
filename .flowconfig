@@ -1,0 +1,8 @@
+[ignore]
+.*/node_modules/**/.*
+
+[libs]
+flow-typed
+
+[lints]
+deprecated-utility=off

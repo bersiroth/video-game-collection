@@ -2,18 +2,19 @@
   "name": "tp-node",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start-dev": "nodemon --exec babel-node app.js",
-    "eslint": "eslint *.js",
-    "eslint:fix": "eslint --fix *.js",
-    "prettier": "prettier --write *.js"
+    "flow": "flow --quiet",
+    "start-dev": "nodemon --exec babel-node src/app.js",
+    "eslint": "eslint src/**/*.js",
+    "eslint:fix": "eslint --fix src/**/*.js",
+    "prettier": "prettier --write src/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bersiroth/tp-node.git"
   },
-  "author": "",
+  "author": "Bernard CARON",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bersiroth/tp-node/issues"
@@ -26,10 +27,15 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
     "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-flowtype": "^3.9.1",
     "eslint-plugin-import": "^2.17.3",
+    "flow-bin": "^0.98.1",
+    "flow-typed": "^2.5.2",
     "nodemon": "^1.19.1",
     "prettier": "^1.17.1"
   }
