@@ -4,11 +4,12 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "flow": "flow --quiet",
     "start-dev": "nodemon --exec babel-node src/app.js",
+    "flow": "flow --quiet",
     "eslint": "eslint src/**/*.js",
     "eslint:fix": "eslint --fix src/**/*.js",
-    "prettier": "prettier --write src/**/*.js"
+    "prettier": "prettier --write src/**/*.js",
+    "test": "npm run eslint:fix && npm run prettier"
   },
   "repository": {
     "type": "git",
