@@ -1,9 +1,11 @@
 version: '2'
 services:
   node:
-    build: .
+    container_name: node
+    build:
+        dockerfile: ./docker/node/Dockerfile
+        context: .
     volumes:
         - .:/var/www
     ports:
       - "3000:3000"
-    command: "npm run start-dev"
