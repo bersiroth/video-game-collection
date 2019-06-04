@@ -8,16 +8,13 @@ hard-install:
 	docker-compose exec node rm -rf ./node_modules && npm install
 
 flow:
-	docker-compose exec node npm run -S flow --quiet
+	docker-compose exec node npm run --silent flow
 
 eslint-fix:
-	docker-compose exec node npm run -S eslint --fix src/**/*.js
+	docker-compose exec node npm run --silent eslint:fix
 
 eslint:
-	docker-compose exec node npm run -S eslint src/**/*.js
-
-prettier:
-	docker-compose exec node npm run -S prettier --write src/**/*.js
+	docker-compose exec node npm run --silent eslint
 
 test:
-	docker-compose exec node npm run eslint:fix && npm run prettier
+	docker-compose exec node npm run --silent test

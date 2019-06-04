@@ -1,0 +1,11 @@
+POST http://{{host}}:{{port}}/user
+Content-Type: application/json
+
+{
+	"firstname": "bernard",
+	"lastname": "bernard"
+}
+
+###
+
+

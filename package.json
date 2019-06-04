@@ -6,10 +6,9 @@
   "scripts": {
     "start-dev": "nodemon --exec babel-node src/app.js",
     "flow": "flow --quiet",
-    "eslint": "eslint src/**/*.js",
-    "eslint:fix": "eslint --fix src/**/*.js",
-    "prettier": "prettier --write src/**/*.js",
-    "test": "npm run eslint:fix && npm run prettier"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint --fix src",
+    "test": "npm run flow && npm run eslint:fix"
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,7 @@
   },
   "homepage": "https://github.com/bersiroth/tp-node#readme",
   "dependencies": {
+    "@hapi/joi": "^15.0.3",
     "express": "^4.17.0"
   },
   "devDependencies": {
@@ -37,7 +37,6 @@
     "eslint-plugin-import": "^2.17.3",
     "flow-bin": "^0.98.1",
     "flow-typed": "^2.5.2",
-    "nodemon": "^1.19.1",
-    "prettier": "^1.17.1"
+    "nodemon": "^1.19.1"
   }
 }
