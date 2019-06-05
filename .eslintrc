@@ -20,5 +20,10 @@
         "sourceType": "module"
     },
     "rules": {
+    },
+    "settings": {
+        "import/resolver": {
+            "babel-module": {}
+        }
     }
 }

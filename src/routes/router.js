@@ -1,6 +1,6 @@
 // @flow
 import express from 'express';
-import user from './users';
+import user from 'routes/users';
 
 const router = express.Router();
 

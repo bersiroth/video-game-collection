@@ -6,3 +6,6 @@ flow-typed
 
 [lints]
 deprecated-utility=off
+
+[options]
+module.name_mapper='^\(.*\)' -> '<PROJECT_ROOT>/src/\1'
