@@ -2,7 +2,7 @@
 import type { $Request, $Response } from 'express';
 import type { ContextInterface } from './interfaces/context';
 
-export default class context implements ContextInterface {
+export default class Context implements ContextInterface {
   req: $Request;
 
   res: $Response;
