@@ -1,6 +1,14 @@
 {
   "plugins": [
     "@babel/plugin-transform-modules-commonjs",
-    "@babel/plugin-transform-flow-strip-types"
+    "@babel/plugin-transform-flow-strip-types",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "tp-node": "./src"
+        }
+      }
+    ]
   ]
 }

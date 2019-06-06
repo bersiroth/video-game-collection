@@ -1,16 +1,22 @@
 // @flow
-import Joi from '@hapi/joi';
-import userSchema from '../schemas/users';
-import type { ContextInterface } from '../interfaces/context';
+import userSchema from 'tp-node/schemas/users';
+import type { ContextInterface } from 'tp-node/interfaces/context';
+import type { ValidatorInterface, validatorError } from 'tp-node/interfaces/validator';
 
-export default class UsersController {
-  static async get(context: ContextInterface) {
+export default class Users {
+  validator: ValidatorInterface;
+
+  constructor(validator: ValidatorInterface) {
+    this.validator = validator;
+  }
+
+  static get(context: ContextInterface) {
     context.sendJson(200, { user: context.getBody() });
   }
 
-  static async create(context: ContextInterface) {
-    Joi.validate(context.getBody(), userSchema, { abortEarly: false },
-      (err: ValidationError) => {
+  create(context: ContextInterface) {
+    this.validator.validate(context.getBody(), userSchema,
+      (err: validatorError) => {
         if (err !== null) {
           context.sendJson(400, { error: err.message });
         } else {

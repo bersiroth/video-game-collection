@@ -1,6 +1,6 @@
 // @flow
 import express from 'express';
-import user from './users';
+import user from 'tp-node/routes/users';
 
 const router = express.Router();
 

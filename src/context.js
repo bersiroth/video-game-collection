@@ -1,6 +1,6 @@
 // @flow
 import type { $Request, $Response } from 'express';
-import type { ContextInterface } from './interfaces/context';
+import type { ContextInterface } from 'tp-node/interfaces/context';
 
 export default class Context implements ContextInterface {
   req: $Request;
