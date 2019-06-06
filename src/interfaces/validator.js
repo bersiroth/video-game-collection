@@ -1,7 +1,8 @@
 // @flow
-declare type validatorCallback = (err: validatorError | null, value: Object | null) => void;
-declare type validatorError = {message: string};
+export type validatorError = {message: string};
+export type validatorCallback = (err: ?validatorError, value: ?Object) => void;
 
 export interface ValidatorInterface {
+  // validate: (value: Object, schema: Object, callback: validatorCallback) => void;
   validate(value: Object, schema: Object, callback: validatorCallback): void;
 }

@@ -1,9 +1,10 @@
+/* eslint-disable class-methods-use-this */
 // @flow
 import Joi from '@hapi/joi';
-import type { ValidatorInterface } from 'interfaces/validator';
+import type { ValidatorInterface, validatorCallback } from 'interfaces/validator';
 
 export default class Validator implements ValidatorInterface {
-  static async validate(value: Object, schema: Object, callback: validatorCallback): void {
+  validate(value: Object, schema: Object, callback: validatorCallback): void {
     Joi.validate(value, schema, { abortEarly: false }, callback);
   }
 }

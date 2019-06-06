@@ -1,7 +1,7 @@
 // @flow
 import userSchema from 'schemas/users';
 import type { ContextInterface } from 'interfaces/context';
-import type { ValidatorInterface } from 'interfaces/validator';
+import type { ValidatorInterface, validatorError } from 'interfaces/validator';
 
 export default class Users {
   validator: ValidatorInterface;
@@ -10,14 +10,14 @@ export default class Users {
     this.validator = validator;
   }
 
-  static async get(context: ContextInterface) {
+  static get(context: ContextInterface) {
     context.sendJson(200, { user: context.getBody() });
   }
 
-  async create(context: ContextInterface) {
+  create(context: ContextInterface) {
     this.validator.validate(context.getBody(), userSchema,
-      (err: validatorError) => {
-        if (err !== null) {
+      (err: ?validatorError) => {
+        if (err != null) {
           context.sendJson(400, { error: err.message });
         } else {
           context.sendJson(201, { user: context.getBody() });
