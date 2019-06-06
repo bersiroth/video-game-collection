@@ -1,6 +1,6 @@
 // @flow
 import express from 'express';
-import router from './routes/router';
+import router from 'tp-node/routes/router';
 
 const app = express();
 

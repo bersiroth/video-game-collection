@@ -5,7 +5,9 @@
     [
       "module-resolver",
       {
-        "root": ["./src"]
+        "alias": {
+          "tp-node": "./src"
+        }
       }
     ]
   ]
