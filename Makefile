@@ -16,5 +16,5 @@ eslint-fix:
 eslint:
 	docker-compose exec node npm run --silent eslint
 
-test:
+launch-test:
 	docker-compose exec node npm run --silent test

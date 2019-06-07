@@ -9,3 +9,4 @@ deprecated-utility=off
 
 [options]
 module.name_mapper='^tp-node/\(.*\)' -> '<PROJECT_ROOT>/src/\1'
+module.name_mapper='^test/\(.*\)' -> '<PROJECT_ROOT>/test/\1'
