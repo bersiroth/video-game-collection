@@ -9,7 +9,7 @@ const router = express.Router();
 const controller = new UsersController(new Validator());
 
 router
-  .get('/user', (req: $Request, res: $Response) => UsersController.get(new Context(req, res)))
-  .post('/user', (req: $Request, res: $Response) => controller.create(new Context(req, res)));
+  .get('/users', (req: $Request, res: $Response) => UsersController.get(new Context(req, res)))
+  .post('/users', (req: $Request, res: $Response) => controller.create(new Context(req, res)));
 
 export default router;

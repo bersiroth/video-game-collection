@@ -9,7 +9,7 @@
     "eslint": "eslint src test",
     "eslint:fix": "eslint --fix src test",
     "flow-eslint": "npm run flow && npm run eslint:fix",
-    "test": "mocha --require @babel/register test/**/*.js"
+    "test": "NODE_ENV=test mocha --require @babel/register test/**/*.js --exit"
   },
   "repository": {
     "type": "git",
@@ -32,8 +32,10 @@
     "@babel/plugin-transform-flow-strip-types": "^7.4.4",
     "@babel/plugin-transform-modules-commonjs": "^7.4.4",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-dynamic-import-node-sync": "^2.0.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-import-resolver-babel-module": "^5.1.0",

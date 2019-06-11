@@ -1,13 +1,13 @@
-POST http://{{host}}:{{port}}/user
+POST http://{{host}}:{{port}}/users
 Content-Type: application/json
 
 {
-	"firstname": "bernard",
-	"lastname": "bernard"
+	"firstname": "john",
+	"lastname": "doe"
 }
 
 ###
 
-GET http://{{host}}:{{port}}/user
+GET http://{{host}}:{{port}}/users
 
 ###
