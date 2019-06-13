@@ -1,3 +1,5 @@
+.PHONY: test
+
 ssh-node:
 	docker-compose exec node bash
 

@@ -1,9 +1,11 @@
 {
     "parser": "babel-eslint",
     "plugins": [
-        "flowtype"
+        "flowtype",
+        "chai-friendly"
     ],
     "env": {
+        "mocha": true,
         "es6": true,
         "node": true
     },
@@ -13,13 +15,16 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "expect": false
     },
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "rules": {
+        "no-unused-expressions": 0,
+        "chai-friendly/no-unused-expressions": 2
     },
     "settings": {
         "import/resolver": {

@@ -1,0 +1,14 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/node:12.3
+        working_directory: ~/repo
+        steps:
+            - checkout
+            - run:
+                name: installation node module
+                command: npm install
+            - run:
+                name: unit test
+                command: npm run test
