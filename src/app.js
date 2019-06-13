@@ -1,14 +1,13 @@
 // @flow
 import express from 'express';
+import config from 'config';
 import router from 'tp-node/routes/router';
-
-const config = import(`./../config/${process.env.NODE_ENV || 'development'}`).default;
 
 const app = express();
 
 app.use(express.json());
 app.use(router);
 
-app.listen(config.port);
+app.listen(config.app.port);
 
 export default app;

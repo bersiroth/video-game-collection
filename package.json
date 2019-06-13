@@ -23,6 +23,7 @@
   "homepage": "https://github.com/bersiroth/tp-node#readme",
   "dependencies": {
     "@hapi/joi": "^15.0.3",
+    "config": "^3.1.0",
     "express": "^4.17.0"
   },
   "devDependencies": {

@@ -8,7 +8,6 @@
       {
         "alias": {
           "tp-node": "./src",
-          "config": "./config",
           "test": "./test"
         }
       }

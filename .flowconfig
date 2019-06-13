@@ -11,5 +11,3 @@ deprecated-utility=off
 [options]
 module.name_mapper='^tp-node/\(.*\)' -> '<PROJECT_ROOT>/src/\1'
 module.name_mapper='^test/\(.*\)' -> '<PROJECT_ROOT>/test/\1'
-module.name_mapper='^config/\(.*\)' -> '<PROJECT_ROOT>/config/\1'
-module.ignore_non_literal_requires=true

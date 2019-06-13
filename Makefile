@@ -1,3 +1,5 @@
+.PHONY: test
+
 ssh-node:
 	docker-compose exec node bash
 
@@ -16,5 +18,5 @@ eslint-fix:
 eslint:
 	docker-compose exec node npm run --silent eslint
 
-launch-test:
+test:
 	docker-compose exec node npm run --silent test
