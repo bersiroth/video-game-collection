@@ -2,13 +2,13 @@
   "name": "tp-node",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start-dev": "nodemon --exec babel-node -L src/app.js",
-    "flow": "flow --quiet",
-    "eslint": "eslint src test",
-    "eslint:fix": "eslint --fix src test",
-    "flow-eslint": "npm run flow && npm run eslint:fix",
+    "start": "tsc && node dist/app.js",
+    "watch": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"nodemon dist/app.js\"",
+    "tsc-watch": "tsc --watch",
+    "eslint": "eslint ./src/**/*.ts",
+    "eslint:fix": "eslint --fix ./src/**/*.ts",
     "test": "NODE_ENV=test mocha --require @babel/register test/**/*.js --exit"
   },
   "repository": {
@@ -23,29 +23,27 @@
   "homepage": "https://github.com/bersiroth/tp-node#readme",
   "dependencies": {
     "@hapi/joi": "^15.0.3",
+    "@types/config": "0.0.34",
+    "@types/express": "^4.17.0",
+    "@types/hapi__joi": "^15.0.1",
     "config": "^3.1.0",
-    "express": "^4.17.0"
+    "express": "^4.17.0",
+    "module-alias": "^2.2.0",
+    "typescript": "^3.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/node": "^7.4.5",
-    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
-    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-dynamic-import-node-sync": "^2.0.1",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "@types/node": "^12.0.8",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-import-resolver-babel-module": "^5.1.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
-    "eslint-plugin-flowtype": "^3.9.1",
-    "eslint-plugin-import": "^2.17.3",
-    "flow-bin": "^0.98.1",
-    "flow-typed": "^2.5.2",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1"
+  },
+  "_moduleAliases": {
+    "tp-node": "dist/"
   }
 }

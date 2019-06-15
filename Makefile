@@ -9,8 +9,8 @@ install:
 hard-install:
 	docker-compose exec node rm -rf ./node_modules && npm install
 
-flow:
-	docker-compose exec node npm run --silent flow
+watch:
+	docker-compose exec node npm run --silent watch
 
 eslint-fix:
 	docker-compose exec node npm run --silent eslint:fix

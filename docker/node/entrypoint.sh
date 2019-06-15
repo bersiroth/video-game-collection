@@ -2,4 +2,4 @@
 
 npm install --no-save
 
-npm run start-dev
+exec "$@"
