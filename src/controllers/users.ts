@@ -15,7 +15,7 @@ export default class Users {
 
     public create(context: ContextInterface): void  {
         this.validator.validate(context.getBody(), userSchema,
-            (err: ValidatorError): void  => {
+            (err: ValidatorError | null): void  => {
                 if (err !== null) {
                     context.sendJson(400, { error: err.message });
                 } else {
