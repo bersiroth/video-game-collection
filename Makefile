@@ -9,7 +9,7 @@ install:
 hard-install:
 	docker-compose exec node rm -rf ./node_modules && npm install
 
-watch:
+start:
 	docker-compose exec node npm run --silent start
 
 watch:
