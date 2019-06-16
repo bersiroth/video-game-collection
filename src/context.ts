@@ -2,20 +2,20 @@ import {Request, Response} from 'express';
 import {ContextInterface} from 'tp-node/interfaces/context';
 
 export default class Context implements ContextInterface {
-    req: Request;
+    private req: Request;
 
-    res: Response;
+    private res: Response;
 
-    constructor(req: Request, res: Response) {
+    public constructor(req: Request, res: Response) {
         this.req = req;
         this.res = res;
     }
 
-    getBody(): Object {
+    public getBody(): object {
         return this.req.body;
     }
 
-    sendJson(code: number, json: Object): void {
+    public sendJson(code: number, json: object): void {
         this.res.status(code).json(json);
     }
 }

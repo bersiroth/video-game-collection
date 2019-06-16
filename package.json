@@ -7,8 +7,8 @@
     "start": "tsc && node dist/app.js",
     "watch": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"nodemon dist/app.js\"",
     "tsc-watch": "tsc --watch",
-    "eslint": "eslint ./src/**/*.ts ./test/**/*.ts",
-    "eslint:fix": "eslint --fix ./src/**/*.ts ./test/**/*.ts",
+    "eslint": "eslint --ext .ts ./src ./test",
+    "eslint:fix": "eslint  --ext .ts --fix ./src ./test",
     "test": "NODE_ENV=test mocha -r ts-node/register -r tsconfig-paths/register test/**/*.ts --exit"
   },
   "repository": {
