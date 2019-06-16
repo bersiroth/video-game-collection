@@ -5,8 +5,10 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "watch": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"nodemon dist/app.js\"",
+    "build": "tsc",
+    "watch": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"npm run tsc-watch\" \"npm run node-watch\"",
     "tsc-watch": "tsc --watch",
+    "node-watch": "nodemon dist/app.js",
     "eslint": "eslint --ext .ts ./src ./test",
     "eslint:fix": "eslint  --ext .ts --fix ./src ./test",
     "test": "NODE_ENV=test mocha -r ts-node/register -r tsconfig-paths/register test/**/*.ts --exit"

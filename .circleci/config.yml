@@ -10,5 +10,8 @@ jobs:
                 name: installation node module
                 command: npm install
             - run:
+                name: build
+                command: npm run build
+            - run:
                 name: unit test
                 command: npm run test
