@@ -24,9 +24,7 @@ describe('Service validator', (): void => {
             };
             validator.validate(user, userSchema, (err: ValidatorError | null): void => {
                 expect(err).to.be.not.null;
-                if (err) {
-                    expect(err.message).to.be.string;
-                }
+                expect(err.message).to.be.string;
             });
         });
     });
