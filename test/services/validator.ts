@@ -1,6 +1,6 @@
+import {expect} from 'chai';
 import Validator from 'tp-node/services/validator';
 import userSchema from 'tp-node/schemas/users';
-import {expect} from 'chai';
 import {ValidatorError} from 'tp-node/interfaces/validator';
 
 describe('Service validator', (): void => {
@@ -24,7 +24,7 @@ describe('Service validator', (): void => {
             };
             validator.validate(user, userSchema, (err: ValidatorError | null): void => {
                 expect(err).to.be.not.null;
-                expect(err.message).to.be.string;
+                expect(err && err.message).to.be.string;
             });
         });
     });

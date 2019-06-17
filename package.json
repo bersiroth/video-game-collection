@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "node dist/app.js",
     "build": "tsc",
     "watch": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"npm run tsc-watch\" \"npm run node-watch\"",
     "tsc-watch": "tsc --watch",
