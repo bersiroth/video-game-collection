@@ -5,6 +5,7 @@ services:
     build:
         dockerfile: ./docker/node/Dockerfile
         context: .
+    command: ["npm", "run", "watch"]
     volumes:
         - .:/var/www
     ports:

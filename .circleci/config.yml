@@ -10,5 +10,11 @@ jobs:
                 name: installation node module
                 command: npm install
             - run:
+                name: linter
+                command: npm run eslint
+            - run:
+                name: build
+                command: npm run build
+            - run:
                 name: unit test
                 command: npm run test

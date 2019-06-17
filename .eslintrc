@@ -1,34 +1,10 @@
 {
-    "parser": "babel-eslint",
-    "plugins": [
-        "flowtype",
-        "chai-friendly"
-    ],
-    "env": {
-        "mocha": true,
-        "es6": true,
-        "node": true
-    },
+    "parser": "@typescript-eslint/parser",
     "extends": [
-        "airbnb-base",
-        "plugin:flowtype/recommended"
+        "plugin:@typescript-eslint/recommended"
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly",
-        "expect": false
-    },
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module"
-    },
-    "rules": {
-        "no-unused-expressions": 0,
-        "chai-friendly/no-unused-expressions": 2
-    },
-    "settings": {
-        "import/resolver": {
-            "babel-module": {}
-        }
     }
 }
