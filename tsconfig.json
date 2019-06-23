@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "strict": true,
     "outDir": "dist",
-    "target": "es2017",
+    "target": "ESNext" ,
     "alwaysStrict": true,
     "baseUrl": ".",
     "paths": {
