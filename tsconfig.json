@@ -8,6 +8,8 @@
     "target": "ESNext" ,
     "alwaysStrict": true,
     "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "paths": {
       "tp-node/*": ["./src/*"]
     }

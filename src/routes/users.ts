@@ -8,7 +8,7 @@ const router = express.Router();
 const controller = new UsersController(new Validator());
 
 router
-    .get('/users', (req: Request, res: Response): void => UsersController.get(new Context(req, res)))
+    .get('/users', (req: Request, res: Response): void => controller.get(new Context(req, res)))
     .post('/users', (req: Request, res: Response): void => controller.create(new Context(req, res)));
 
 export default router;

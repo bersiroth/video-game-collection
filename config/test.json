@@ -1,5 +1,13 @@
 {
   "app": {
     "port": 4000
+  },
+  "database": {
+    "type": "postgres",
+    "host": "db",
+    "port": 5432,
+    "username": "test",
+    "password": "test",
+    "database": "tp-node-test"
   }
 }
