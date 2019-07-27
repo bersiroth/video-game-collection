@@ -5,9 +5,14 @@ import app from 'tp-node/app';
 chai.use(chaiHttp);
 const {expect, request} = chai;
 
-describe('Controller users', (): void => {
-    describe('get()', (): void => {
-        it('should return a user', (): void => {
+describe('Controller users', async(): Promise<void> => {
+
+    before(async(): Promise<void> => {
+        await app;
+    });
+
+    describe('get()', async (): Promise<void> => {
+        it('should return a user', async(): Promise<void> => {
             request(app).get('/users').end((err, res): void => {
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);

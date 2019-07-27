@@ -4,10 +4,12 @@
   },
   "database": {
     "type": "postgres",
-    "host": "db",
+    "host": "postgres",
     "port": 5432,
-    "username": "test",
-    "password": "test",
-    "database": "tp-node-test"
+    "username": "root",
+    "password": "root",
+    "database": "tp-node-test",
+    "dropSchema": true,
+    "migrationsRun": true
   }
 }

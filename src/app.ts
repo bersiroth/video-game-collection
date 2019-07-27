@@ -3,16 +3,18 @@ import "reflect-metadata"
 import express from 'express';
 import config from 'config';
 import router from 'tp-node/routes/router';
-import {createConnection, Connection} from "typeorm";
+import {createConnection} from "typeorm";
+import {Express} from "express-serve-static-core";
 
-const app = express();
+export default async (): Promise<Express> => {
+    const databaseConfig = config.util.toObject(config.get('database'));
+    await createConnection(databaseConfig);
 
-let databaseConfig = config.util.toObject(config.get('database'));
+    const app = express();
 
-createConnection(databaseConfig).then((): void => {
     app.use(express.json());
     app.use(router);
     app.listen(config.get('app.port'));
-}).catch((error: Error): void => console.log(error));
 
-export default app;
+    return app;
+}

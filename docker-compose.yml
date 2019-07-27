@@ -11,12 +11,15 @@ services:
     ports:
       - "3000:3000"
 
-  db:
-    container_name: db
-    image: "postgres:11.4"
+  postgres:
+    container_name: postgres
+    build:
+      dockerfile: ./docker/postgres/Dockerfile
+      context: .
     ports:
       - "5432:5432"
     environment:
       POSTGRES_USER: "root"
       POSTGRES_PASSWORD: "root"
       POSTGRES_DB: "tp-node"
+      POSTGRES_DB_TEST: "tp-node-test"

@@ -13,7 +13,9 @@
       "eslint:fix": "eslint  --ext .ts --fix ./src ./test",
       "test": "NODE_ENV=test mocha -r ts-node/register -r tsconfig-paths/register test/**/*.ts --exit",
       "generate-migration": "ts-node ./node_modules/.bin/typeorm migration:generate -n",
-      "run-migration": "ts-node ./node_modules/typeorm/cli.js migration:run"
+      "exec-migration": "ts-node ./node_modules/.bin/typeorm migration:run",
+      "revert-migration": "ts-node ./node_modules/.bin/typeorm migration:revert",
+      "postinstall": "npm run exec-migration"
    },
    "repository": {
       "type": "git",
