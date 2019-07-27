@@ -10,7 +10,7 @@
       "tsc-watch": "tsc --watch",
       "node-watch": "nodemon dist/app.js",
       "eslint": "eslint --ext .ts ./src ./test",
-      "eslint:fix": "eslint  --ext .ts --fix ./src ./test",
+      "eslint:fix": "eslint --ext .ts --fix ./src ./test",
       "test": "NODE_ENV=test mocha -r ts-node/register -r tsconfig-paths/register test/**/*.ts --exit",
       "generate-migration": "ts-node ./node_modules/.bin/typeorm migration:generate -n",
       "migration": "ts-node ./node_modules/.bin/typeorm migration:run",
