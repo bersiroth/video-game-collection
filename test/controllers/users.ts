@@ -7,13 +7,20 @@ const {expect, request} = chai;
 
 describe('Controller users', async(): Promise<void> => {
 
+    let server: ChaiHttp.Agent;
+
     before(async(): Promise<void> => {
-        await app;
+        const startedApp = await app;
+        server = request(startedApp).keepOpen();
+    });
+
+    after(async(): Promise<void> => {
+        server.close();
     });
 
     describe('get()', async (): Promise<void> => {
         it('should return a user', async(): Promise<void> => {
-            request(app).get('/users').end((err, res): void => {
+            server.get('/users').end((err, res): void => {
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
             });

@@ -4,9 +4,9 @@
    "description": "",
    "main": "dist/app.js",
    "scripts": {
-      "start": "ts-node src/index.ts",
+      "start": "ts-node src/app.ts",
       "build": "tsc",
-      "watch": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"npm run tsc-watch\" \"npm run node-watch\"",
+      "watch": "nodemon src/app.ts",
       "tsc-watch": "tsc --watch",
       "node-watch": "nodemon dist/app.js",
       "eslint": "eslint --ext .ts ./src ./test",

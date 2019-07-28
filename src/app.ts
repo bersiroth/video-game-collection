@@ -4,17 +4,15 @@ import express from 'express';
 import config from 'config';
 import router from 'tp-node/routes/router';
 import {createConnection} from "typeorm";
-import {Express} from "express-serve-static-core";
+import {Server} from "http";
 
-export default async (): Promise<Express> => {
-    const databaseConfig = config.util.toObject(config.get('database'));
-    await createConnection(databaseConfig);
-
+async function start(): Promise<Server> {
+    await createConnection(config.get('database.connection'));
     const app = express();
 
     app.use(express.json());
     app.use(router);
-    app.listen(config.get('app.port'));
-
-    return app;
+    return app.listen(config.get('app.port'));
 }
+
+export default start();

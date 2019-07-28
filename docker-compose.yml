@@ -10,6 +10,7 @@ services:
         - .:/var/www
     ports:
       - "3000:3000"
+    env_file: .env
 
   postgres:
     container_name: postgres
@@ -18,8 +19,4 @@ services:
       context: .
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_USER: "root"
-      POSTGRES_PASSWORD: "root"
-      POSTGRES_DB: "tp-node"
-      POSTGRES_DB_TEST: "tp-node-test"
+    env_file: .env

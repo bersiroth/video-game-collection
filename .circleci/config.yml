@@ -3,6 +3,11 @@ jobs:
     build:
         docker:
             - image: circleci/node:12.3
+              environment:
+                  DB_HOST: "localhost"
+                  POSTGRES_USER: "root"
+                  POSTGRES_PASSWORD: "root"
+                  POSTGRES_DB: "tp-node"
             - image: circleci/postgres:11.4
               environment:
                   POSTGRES_USER: "root"
