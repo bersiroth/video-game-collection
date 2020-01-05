@@ -9,7 +9,7 @@ export default class Users {
         this.validator = validator;
     }
 
-    public static get(context: ContextInterface): void {
+    public get(context: ContextInterface): void {
         context.sendJson(200, { user: context.getBody() });
     }
 
